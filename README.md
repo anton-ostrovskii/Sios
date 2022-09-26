@@ -4,6 +4,8 @@ This repository contains some different cool new things I've recently learned ab
 
 # General Swift Stuff
 
+## Swift Facts 101
+
 - **Swift** is a _compiled_ language.
 - There are no _scalars_ in Swift. Everything is an **object**.
 - There **4 object types** in Swift: `class`, `struct`, `enum`, `actor` (new in Swift 5.5).
@@ -11,6 +13,17 @@ This repository contains some different cool new things I've recently learned ab
 - `defer` statements are being executed in a reverse order as they were registered.
 - `assert` and `assertFailure` are crashing in Debug configuration but do nothing in production code.
 - `precondition`, `preconditionFailure` and `fatalError` are always crashing the app irrespective of a configuration.
+
+## Swift Stability
+
+**ABI** - it is Application Binary Interface. Was introduced in Swift 5.0.0. It means that Swift became more stabel and that a Swift Runtime will not be baked into an app (if installed on newer platforms). Also it means that everything what was built using Swift 5.0.0 could be run on Swift 5.1.0 and newer. In order to enable ABI - there is nothing special should required in project settings. It's enough to just start using Swift 5.0.0 and newer.
+
+**Module Stability** - was initialy introduced in Swift 5.1.0. In order to activate a module stability, the following build settings should be configured:
+```
+BUILD LIBRARY FOR DISTRIBUTION => YES
+SKIP INSTALL => NO
+```
+Module Stability means that a Framework compiled in Swift 5.1.0 bould be imported in a project using Swift 5.2.0 and newer.
 
 # Access Mofidiers
 
